@@ -1,0 +1,395 @@
+/* GeoserviceLandingPage.css */
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #333;
+  background: #f5f7fa;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+/* Cabeçalho fixo */
+header {
+  max-width: 100%;
+  background: #ffffff;
+  border-bottom: 2px solid #231f49;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header-container {
+  max-width: 100%;
+  margin-left: 5%;
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d3b66;
+}
+.desktop-menu a {
+  margin: 3%;
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color .3s;
+}
+.desktop-menu a:hover{
+  color: #0d3b66;
+}
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Hero */
+
+.section.hero {
+  max-width: 100%;
+  background: 
+  linear-gradient(2deg, rgba(13, 59, 102, 0.85), rgba(0, 127, 140, 0.85)),
+  url("https://media.istockphoto.com/id/498509481/pt/foto/rec%C3%A9m-constru%C3%ADda-limpeza-de-canos-de-%C3%A1gua-ou-bem-com-compressor-de-ar.jpg?s=612x612&w=0&k=20&c=TCcVtnJ0szcFEY7AWKWCjFfr-5fKacFfV0xAu99t4Ts=");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 80px;
+}
+.hero p {
+  font-size: 20px;
+  text-align: center;
+}
+.hero .highlight {
+  color: #00c2c7;
+}
+.hero .buttons a {
+  margin: 12px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #007f8c;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: background-color .3s, border-color .3s;
+}
+.button:hover {
+  background-color: #005f6b;
+  border-color: #00c2c7;
+}
+.button.whatsapp {
+  background-color: #25d366;
+}
+.button.whatsapp:hover {
+  background-color: #1ebe57;
+  border-color: #128C7E;
+}
+
+/* Gradual fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.section:nth-child(odd) .fade-in {
+  animation-delay: .2s;
+}
+.section:nth-child(even) .fade-in {
+  animation-delay: .4s;
+}
+
+/* Seções */
+.section {
+  padding: 64px 16px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+#about{
+  display: flex;
+  flex-direction: column;
+  
+}
+.section h2 { 
+  align-self: center;
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #0d3b66;
+}
+.section p {
+  max-width: 1200px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section ul{
+  font-size: 15px;
+  margin: 2%;
+}
+/* Grades e cards */
+.grid {
+  display: grid;
+  gap: 50px;
+
+}
+@media(min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(min-width: 1024px) {
+  
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Por padrão, esconde o botão hambúrguer e o menu mobile */
+.menu-button {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* Estilos responsivos para telas menores */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+  
+  .mobile-menu{
+    display: flex;
+  }
+
+  .mobile-menu a {
+  padding: 5%;
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color .3s;
+  border-bottom: 1px solid #0d3b66;
+}
+
+.mobile-menu a:hover {
+  color: #0d3b66;
+  background: #c0d9db;
+}
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+}
+
+}
+
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow .3s, transform .3s;
+  z-index: 1000;
+}
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+.service-card .icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+.project-card img {
+  border-radius: 6px;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+.project-location {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 8px;
+}
+#services{
+  background: url("https://media.istockphoto.com/id/1311024169/pt/vetorial/topographic-map-seamless-pattern-topography-line-map-vector-stock-illustration.jpg?s=612x612&w=0&k=20&c=UoFSj9d0ONO2g5dbklkiqJF8wqq-16ynfO-21_LLfNo=");
+  max-width: 100%;
+  padding: 5% 10%;
+}
+
+#services h2{
+  position: relative;
+  z-index: 1000;
+  color: #f5f7fa;
+}
+
+#services::before{
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-color: rgba(0, 0, 0, 0.6); /* preto com 40% de opacidade */
+  z-index: 1;
+}
+
+#services .buttons{
+  position: relative;
+  max-width: fit-content;
+  z-index: 1000;
+  margin-top: 2%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow .3s, transform .3s;
+}
+
+#services .buttons:hover{
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Depoimentos */
+.testimonial {
+  background: #fff;
+  border-left: 4px solid #007f8c;
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: background-color .3s;
+}
+.testimonial:hover {
+  background-color: #f0faff;
+}
+.stars {
+  color: #facc15;
+  margin-bottom: 12px;
+}
+
+/* Formulário de contato */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  margin: 32px auto 0;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 13.6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color .3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007f8c;
+  outline: none;
+}
+
+/* Rodapé refinado */
+.footer {
+  max-width: 100%;
+  background: #0d3b66;
+  color: #eef2f7;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding: 48px 16px;
+  margin: auto;
+}
+@media(min-width: 768px) {
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.footer-column h4 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.footer-column h4::after {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: #00c2c7;
+  display: block;
+  margin-top: 4px;
+}
+.footer-column ul {
+  list-style: none;
+  margin-top: 16px;
+}
+.footer-column ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-column .social-icons a {
+  margin-right: 8px;
+  color: #eef2f7;
+  transition: color .3s;
+}
+.footer-column .social-icons a:hover {
+  color: #00c2c7;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
